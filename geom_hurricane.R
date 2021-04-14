@@ -124,7 +124,16 @@ filter_hurricane_observation <- function(data,
 #' The hurricane geom is used to visualize the areas of wind speeds any given hurricane observation
 #' data derived from the \code{filter_hurricane_data()} function.
 #' 
-#' @param mapping set of aesthetic mappings created by aes() as used in the ggplot2 package
+#' @param mapping set of aesthetic mappings created by aes() as used in the ggplot2 package:  
+#' \itemize{
+#'    \item{\code{x} longitude}
+#'    \item{\code{y} latitude}
+#'    \item{\code{r_nw} radius in northwest direction}
+#'    \item{\code{r_sw} radius in southwest direction}
+#'    \item{\code{r_ne} radius in northeast direction}
+#'    \item{\code{r_se} radius in southeast direction}
+#'    \item{\code{scale_radii} (default = 1) used to scale the wind speed radii}
+#' }
 #' @param data data of a hurricane observation as derived from \code{filter_hurricane_observation()}
 #' @param stat statistical transformation to use on the data for this layer, as a string
 #' @param inherit.aes If true, mapping is combined with the default mapping at the top level of the 
@@ -135,7 +144,8 @@ filter_hurricane_observation <- function(data,
 #' values are silently removed.
 #' @param ... other arguements passed on to \code{ggplot2::layer()}
 #' 
-#' @details \code{geom_hurricane()} can visualize wind speed areas of several hurricane observations
+#' @details Use the aesthetic \code{scale_radii} to scale the size of the hurricane visualization.
+#' \code{geom_hurricane()} can visualize wind speed areas of several hurricane observations
 #' at once. The distinct draws of the wind speed segments are separated via the location of the 
 #' given hurricane observation using \code{x = longitude} and \code{y = latitude} in the dataset
 #' provided via \code{data}.
